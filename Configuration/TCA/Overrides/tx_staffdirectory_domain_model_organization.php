@@ -22,9 +22,9 @@ $tempColumns = [
             'max' => 10,
         ],
     ],
-    'tx_staffdirectoryorganization_city' => [
+    'tx_staffdirectoryorganization_locality' => [
         'exclude' => false,
-        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.city',
+        'label' => 'LLL:EXT:staffdirectory_organization/Resources/Private/Language/locallang_db.xlf:tx_staffdirectory_domain_model_organization.locality',
         'config' => [
             'type' => 'input',
             'size' => 10,
@@ -75,7 +75,7 @@ $tempColumns = [
         --div--;LLL:EXT:staffdirectory_organization/Resources/Private/Language/locallang_db.xlf:tabs.contact,
             tx_staffdirectoryorganization_address,
             tx_staffdirectoryorganization_postal_code,
-            tx_staffdirectoryorganization_city,
+            tx_staffdirectoryorganization_locality,
             tx_staffdirectoryorganization_email,
             tx_staffdirectoryorganization_telephone,
             tx_staffdirectoryorganization_opening_hours
