@@ -1,0 +1,36 @@
+{
+  "name": "causal/staffdirectory-organization",
+  "type": "typo3-cms-extension",
+  "description": "Additional information for managing organizations.",
+  "keywords": [
+    "TYPO3 CMS"
+  ],
+  "homepage": "https://github.com/xperseguers/staffdirectory-organization",
+  "authors": [
+    {
+      "name": "Xavier Perseguers",
+      "email": "xavier@causal.ch",
+      "homepage": "https://www.causal.ch",
+      "role": "Developer"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=7.4.0 <=7.4.99 || >=8.0.0 <=8.3.99",
+    "typo3/cms-core": "^11 || ^12",
+    "causal/staffdirectory": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Causal\\StaffdirectoryOrganization\\": "Classes/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "0.1.x-dev"
+    },
+    "typo3/cms": {
+      "extension-key": "staffdirectory_organization"
+    }
+  }
+}
