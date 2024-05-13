@@ -6,4 +6,5 @@ CREATE TABLE tx_staffdirectory_domain_model_organization
     tx_staffdirectoryorganization_email         varchar(80)  DEFAULT '' NOT NULL,
     tx_staffdirectoryorganization_telephone     varchar(20)  DEFAULT '' NOT NULL,
     tx_staffdirectoryorganization_opening_hours text,
+    tx_staffdirectoryorganization_image         int(11) DEFAULT '0' NOT NULL,
 );

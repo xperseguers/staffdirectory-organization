@@ -24,7 +24,7 @@ $tempColumns = [
     ],
     'tx_staffdirectoryorganization_locality' => [
         'exclude' => false,
-        'label' => 'LLL:EXT:staffdirectory_organization/Resources/Private/Language/locallang_db.xlf:tx_staffdirectory_domain_model_organization.locality',
+        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.locality',
         'config' => [
             'type' => 'input',
             'size' => 10,
@@ -61,8 +61,47 @@ $tempColumns = [
             'cols' => 30,
             'rows' => 4,
         ],
-    ],
+    ]
 ];
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    'tx_staffdirectory_domain_model_organization',
+    [
+        'tx_staffdirectoryorganization_image' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.images',
+            'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+                'tx_staffdirectoryorganization_image',
+                [
+                    'appearance' => [
+                        'createNewRelationLinkTitle' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.images',
+                        'fileUploadAllowed' => true,
+                        'maxitems' => 5,
+                    ],
+                    'overrideChildTca' => [
+                        'types' => [
+                            \TYPO3\CMS\Core\Resource\File::FILETYPE_IMAGE => [
+                                'showitem' => '
+                                    --palette--;;imageoverlayPalette,
+                                    --palette--;;filePalette
+                                ',
+                            ],
+                        ],
+                    ],
+                ],
+                $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
+            ),
+        ],
+    ]
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    'tx_staffdirectory_domain_model_organization',
+    'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.images,
+        tx_staffdirectoryorganization_image,',
+    '',
+    'after:description'
+);
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
     'tx_staffdirectory_domain_model_organization',
@@ -81,5 +120,5 @@ $tempColumns = [
             tx_staffdirectoryorganization_opening_hours
     ',
     '',
-    'after:description'
+    'after:tx_staffdirectoryorganization_image'
 );
