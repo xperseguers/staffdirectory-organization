@@ -6,6 +6,9 @@
 			<trans-unit id="tx_staffdirectory_domain_model_organization.locality">
 				<source>Locality</source>
 			</trans-unit>
+			<trans-unit id="tx_staffdirectory_domain_model_organization.website">
+				<source>Website</source>
+			</trans-unit>
 			<trans-unit id="tx_staffdirectory_domain_model_organization.opening_hours">
 				<source>Opening Hours</source>
 			</trans-unit>
