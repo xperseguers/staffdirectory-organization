@@ -102,6 +102,7 @@ $tempColumns = [
             tx_staffdirectoryorganization_locality,
             tx_staffdirectoryorganization_email,
             tx_staffdirectoryorganization_telephone,
+            tx_staffdirectoryorganization_website,
             tx_staffdirectoryorganization_opening_hours,
         --div--;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.images,
             tx_staffdirectoryorganization_images,
