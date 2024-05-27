@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+	<file source-language="en" target-language="fr" datatype="plaintext" date="2024-05-27T12:44:12Z">
+		<header/>
+		<body>
+			<trans-unit id="tx_staffdirectory_domain_model_organization.locality">
+				<target>Localité</target>
+			</trans-unit>
+			<trans-unit id="tx_staffdirectory_domain_model_organization.website">
+				<target>Site web</target>
+			</trans-unit>
+			<trans-unit id="tx_staffdirectory_domain_model_organization.opening_hours">
+				<target>Heures d'ouverture</target>
+			</trans-unit>
+			<trans-unit id="tabs.contact">
+				<target>Contact</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
