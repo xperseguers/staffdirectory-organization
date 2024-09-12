@@ -28,7 +28,7 @@ $tempColumns = [
             'type' => 'input',
             'size' => 10,
             'eval' => 'trim',
-            'max' => 10,
+            'max' => 50,
         ],
     ],
     'tx_staffdirectoryorganization_website' => [
