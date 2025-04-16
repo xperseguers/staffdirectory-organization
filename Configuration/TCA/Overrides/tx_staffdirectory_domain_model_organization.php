@@ -75,19 +75,29 @@ $tempColumns = [
     ],
     'tx_staffdirectoryorganization_images' => [
         'exclude' => false,
-        'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.image',
+        'label' => 'LLL:EXT:staffdirectory_organization/Resources/Private/Language/locallang_db.xlf:tabs.media',
         'l10n_mode' => 'exclude',
-        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
-            'tx_staffdirectoryorganization_images',
-            [
-                'maxitems' => 5,
-                'minitems' => 0
-            ],
-            $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
-        )
     ],
 ];
-
+$typo3Version = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class)->getMajorVersion();
+if ($typo3Version >= 12) {
+    $tempColumns['tx_staffdirectoryorganization_images']['config'] =
+        [
+            'type' => 'file',
+            'maxitems' => 5,
+            'minitems' => 0,
+            'allowed' => 'jpg,jpeg,png,gif,webp,svg,webm,mp4,mov,avi,wmv,youtube,vimeo,ogg',
+        ];
+} else {
+    $tempColumns['tx_staffdirectoryorganization_images']['config'] = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
+        'tx_staffdirectoryorganization_images',
+        [
+            'maxitems' => 5,
+            'minitems' => 0
+        ],
+        'jpg,jpeg,png,gif,webp,svg,webm,mp4,mov,avi,wmv,youtube,vimeo,ogg'
+    );
+}
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
     'tx_staffdirectory_domain_model_organization',
     $tempColumns
@@ -104,7 +114,7 @@ $tempColumns = [
             tx_staffdirectoryorganization_telephone,
             tx_staffdirectoryorganization_website,
             tx_staffdirectoryorganization_opening_hours,
-        --div--;LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.images,
+        --div--;LLL:EXT:staffdirectory_organization/Resources/Private/Language/locallang_db.xlf:tabs.media,
             tx_staffdirectoryorganization_images,
     ',
     '',
